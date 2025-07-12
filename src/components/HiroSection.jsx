@@ -129,7 +129,7 @@ function HiroSection() {
             </motion.div>
 
             <motion.div className="image-section" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.4 }} viewport={{ once: false }}>
-              <img src='/src/assetes/Foto/WhatsApp Image 2025-07-06 at 13.42.02_bed008a2.jpg' alt="Adam Aryanto" />
+              <img src='/src/assets/WhatsApp Image 2025-05-17 at 20.17.27_29bf25e6.jpg' alt="Adam Aryanto" />
             </motion.div>
           </motion.div>
         </section>
