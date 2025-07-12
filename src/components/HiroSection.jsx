@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { AnimatePresence, motion } from 'framer-motion';
-import heroImage from '../../src/assets/WhatsApp Image 2025-05-17 at 20.17.27_29bf25e6.jpg';
+
 import ChatBot from './ChatBot';
 import { FaCode, FaCertificate, FaTools } from 'react-icons/fa';
 import ContactSection from './ContactSection';
