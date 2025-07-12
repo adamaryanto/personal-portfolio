@@ -1,0 +1,594 @@
+/* ======================
+   Global & Root Styling
+====================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--color-background-dark);
+  color: var(--color-font-white);
+}
+
+:root {
+  --color-background-dark: #0a192f;
+  --color-font-white: white;
+}
+
+/* ======================
+   Navbar
+====================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: var(--color-background-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.navbar h1 {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.nav-item {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item a {
+  color: var(--color-font-white);
+  margin: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-item a:hover {
+  color: blue;
+}
+
+/* ======================
+   Hero Section
+====================== */
+.wrappperHiroSection {
+  background-color: var(--color-background-dark);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 40px; /* ⬅️ Tambahkan padding-top 100px */
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.intro-section {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.intro-section h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.intro-section h3 {
+  font-size: 24px;
+  color: #00b4d8;
+  margin-bottom: 20px;
+}
+
+.intro-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #cbd5e1;
+}
+
+.image-section {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.image-section img {
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger div {
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burger.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.btnGroupHiro {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btnContact {
+  padding: 12px 24px;
+  background-color: #00b4d8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btnContact:hover {
+  background-color: #0096c7;
+}
+
+.btnCv {
+  padding: 12px 24px;
+  background-color: transparent;
+  color: #00b4d8;
+  border: 2px solid #00b4d8;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnCv:hover {
+  background-color: #00b4d8;
+  color: white;
+}
+
+/* ======================
+   About Section
+====================== */
+.sectionAbout {
+  padding: 60px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.aboutContent {
+  padding: 40px;
+  border-radius: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutTitle {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #9f7aea;
+}
+
+.aboutBodyGlass {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+  width: 100%;
+}
+
+.aboutBody {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aboutImage {
+  text-align: center;
+}
+
+.aboutImg {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-me {
+  max-width: 600px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+/* ======================
+   Portfolio Section
+====================== */
+.portfolio-section {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.portfolio-card img {
+  width: 100%;
+  max-height: 180px; /* Atur tinggi maksimum */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+
+.portfolio-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #9f7aea;
+}
+
+.portfolio-subtitle {
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.portfolio-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.portfolio-tabs button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+}
+
+.portfolio-tabs button:hover,
+.portfolio-tabs button.active {
+  background-color: #2d3748;
+  
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.portfolio-card,
+.certificate-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Untuk project/certificates */
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tech-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.tech-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Untuk grid Tech Stack agar maksimal 3 per baris */
+.tech-grid {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Efek glass universal */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  max-width: 700px;      /* Batas lebar maksimal */
+  
+}
+
+
+.certificate-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+.portfolio-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 7px;
+  max-width: 1100px;
+  border-radius: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.social-icons a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00b4d8;
+}
+
+
+.portfolio-tabs button {
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+  padding: 15px 120px;
+  border-radius: 6px;
+  
+  color: white;
+  
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-icon {
+  font-size: 18px;
+}
+
+.portfolio-tabs .active {
+  background-color: #2d3748;
+  border-color: #9f7aea;
+  color: #9f7aea;
+}
+
+
+.portfolio-tabs button:hover,
+.portfolio-tabs button.active {
+  background-color: #2d3748;
+  border-color: #9f7aea;
+  color: #9f7aea;
+}
+
+.portfolio-card-body h3,
+.certificate-title {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.portfolio-card-body p {
+  color: #cbd5e1;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.portfolio-btn-group {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-demo,
+.btn-detail {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: white;
+  background: #9f7aea;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-demo:hover,
+.btn-detail:hover {
+  background: #805ad5;
+}
+
+/* ======================
+   Responsive (Mobile)
+====================== */
+@media screen and (max-width: 600px) {
+  .nav-item {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-background-dark);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 150px;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-item.open {
+    display: flex;
+  }
+
+  .nav-item a {
+    margin: 10px 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-section {
+    padding: 20px;
+  }
+
+  .image-section img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  /* ✅ Ukuran foto di ABOUT ME */
+  .aboutImg {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* ✅ Container aboutMe kotak glass */
+  .aboutBodyGlass {
+    padding: 20px;
+  }
+
+  /* ✅ Card portfolio biar responsive */
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* ✅ Tombol tab portfolio di mobile */
+  .portfolio-tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .portfolio-tabs button {
+    width: 100%;
+    max-width: 220px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .tab-icon {
+    font-size: 16px;
+  }
+  /* ✅ Social icons agar di tengah saat mobile */
+.social-icons {
+  justify-content: center;
+  margin-top: 16px;
+}
+  .btnGroupHiro {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btnGroupHiro button {
+    width: 100%;
+    max-width: 250px;
+  }
+
+}
