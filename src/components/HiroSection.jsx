@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { AnimatePresence, motion } from 'framer-motion';
 import hiroItem from '../Foto/WhatsApp Image 2025-07-06 at 13.42.02_bed008a2.jpg';
-import cv from '../cv/Cv Adam 2025.pdf';
+import cv from '../cv/Cv Adam 2025 (2).pdf'
 import sertif1 from '../Certificate/Belajar Dasar Pemrograman Web.png'
 import sertif2 from '../Certificate/Belajar Dasar Pemrograman Javascript .png'
 import sertif3 from '../Certificate/Belajar Membuat Front-End Web Untuk Pemula.png'
