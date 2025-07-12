@@ -41,14 +41,14 @@ function HiroSection() {
       {
         title: 'Landing Page Restaurant Burger',
         description: 'Program ini dirancang untuk mempermudah pengguna dalam menyelesaikan soal-soal Aritmatika secara otomatis.',
-        image: {porto1},
+        image: porto1,
         demoLink: 'https://adamaryanto.github.io/restaurant-landing-page/',
         detailLink: '#',
       },
       {
         title: 'Gunting Batu Kertas Game',
         description: 'Game Gunting Batu Kertas interaktif berbasis React dengan desain modern dan statistik pemain (WinRate, jumlah pertandingan, dan poin). Aplikasi ini sepenuhnya berjalan di sisi frontend dan dirancang responsif untuk pengalaman pengguna yang optimal di berbagai perangkat.',
-        image: {porto3}, // ganti dengan nama file gambarnya kalau belum ada
+        image: porto3, // ganti dengan nama file gambarnya kalau belum ada
         demoLink: 'https://adamaryanto.github.io/gunting-batu-kertas-react-app/', // kalau sudah dideploy ke Vercel atau Netlify
         detailLink: 'https://github.com/adamaryanto/gunting-batu-kertas-react-app'
       },
@@ -57,7 +57,7 @@ function HiroSection() {
           {
             title: 'Cek Khodam',
             description: 'Cek Khodam adalah aplikasi web hiburan yang memungkinkan pengguna mengecek nama mereka dan mendapatkan hasil "khodam" secara acak. Dilengkapi dengan animasi loader dan UI interaktif berbasis Tailwind CSS, aplikasi ini cocok untuk proyek frontend ringan dan seru.',
-            image: {porto2}, // ganti dengan path thumbnail jika ada
+            image: porto2, // ganti dengan path thumbnail jika ada
             demoLink: 'https://adamaryanto.github.io/cek-khodam-online/', // isi dengan link demo jika tersedia
             detailLink: 'https://github.com/adamaryanto/cek-khodam-online' // ganti dengan link GitHub milikmu
           }
@@ -65,22 +65,22 @@ function HiroSection() {
     ],
     certificates: [
   {
-    image: {sertif1},
+    image: sertif1,
     title: 'Belajar Dasar Pemrograman Web',
     url: 'https://www.dicoding.com/certificates/EYX4J26G5ZDL',
   },
   {
-    image: {sertif2},
+    image: sertif2,
     title: 'Belajar Dasar Pemrograman Javascript',
     url: 'https://www.dicoding.com/certificates/1RXYEOQG3ZVM',
   },
   {
-    image: {sertif3},
+    image: sertif3,
     title: 'Belajar Membuat Front-End Web Untuk Pemula',
     url: 'https://www.dicoding.com/certificates/98XWEK1DWXM3',
   },
   {
-    image: {sertif4},
+    image: sertif4,
     title: 'Responsive Web Design',
     url: 'https://www.freecodecamp.org/certification/adamarynto72/responsive-web-design',
   },
