@@ -32,14 +32,14 @@ function HiroSection() {
       {
         title: 'Landing Page Restaurant Burger',
         description: 'Program ini dirancang untuk mempermudah pengguna dalam menyelesaikan soal-soal Aritmatika secara otomatis.',
-        image: '/assetes/Portofolio/BurgerKill.png',
+        image: '/src/assetes/Portofolio/BurgerKill.png',
         demoLink: 'https://adamaryanto.github.io/restaurant-landing-page/',
         detailLink: '#',
       },
       {
         title: 'Gunting Batu Kertas Game',
         description: 'Game Gunting Batu Kertas interaktif berbasis React dengan desain modern dan statistik pemain (WinRate, jumlah pertandingan, dan poin). Aplikasi ini sepenuhnya berjalan di sisi frontend dan dirancang responsif untuk pengalaman pengguna yang optimal di berbagai perangkat.',
-        image: '/assetes/Portofolio/Gunting Batu Kertas.png', // ganti dengan nama file gambarnya kalau belum ada
+        image: '/src/assetes/Portofolio/Gunting Batu Kertas.png', // ganti dengan nama file gambarnya kalau belum ada
         demoLink: 'https://adamaryanto.github.io/gunting-batu-kertas-react-app/', // kalau sudah dideploy ke Vercel atau Netlify
         detailLink: 'https://github.com/adamaryanto/gunting-batu-kertas-react-app'
       },
@@ -48,7 +48,7 @@ function HiroSection() {
           {
             title: 'Cek Khodam',
             description: 'Cek Khodam adalah aplikasi web hiburan yang memungkinkan pengguna mengecek nama mereka dan mendapatkan hasil "khodam" secara acak. Dilengkapi dengan animasi loader dan UI interaktif berbasis Tailwind CSS, aplikasi ini cocok untuk proyek frontend ringan dan seru.',
-            image: '/assetes/Portofolio/Cek Khodam Online.png', // ganti dengan path thumbnail jika ada
+            image: '/src/assetes/Portofolio/Cek Khodam Online.png', // ganti dengan path thumbnail jika ada
             demoLink: 'https://adamaryanto.github.io/cek-khodam-online/', // isi dengan link demo jika tersedia
             detailLink: 'https://github.com/adamaryanto/cek-khodam-online' // ganti dengan link GitHub milikmu
           }
@@ -56,22 +56,22 @@ function HiroSection() {
     ],
     certificates: [
   {
-    image: '/assetes/Certificate/Belajar Dasar Pemrograman Web.png',
+    image: '/src/assetes/Certificate/Belajar Dasar Pemrograman Web.png',
     title: 'Belajar Dasar Pemrograman Web',
     url: 'https://www.dicoding.com/certificates/EYX4J26G5ZDL',
   },
   {
-    image: '/assetes/Certificate/Belajar Dasar Pemrograman Javascript .png',
+    image: '/src/assetes/Certificate/Belajar Dasar Pemrograman Javascript .png',
     title: 'Belajar Dasar Pemrograman Javascript',
     url: 'https://www.dicoding.com/certificates/1RXYEOQG3ZVM',
   },
   {
-    image: '/assetes/Certificate/Belajar Membuat Front-End Web Untuk Pemula.png',
+    image: '/src/assetes/Certificate/Belajar Membuat Front-End Web Untuk Pemula.png',
     title: 'Belajar Membuat Front-End Web Untuk Pemula',
     url: 'https://www.dicoding.com/certificates/98XWEK1DWXM3',
   },
   {
-    image: '/assetes/Certificate/Responsive Web Design.png',
+    image: '/src/assetes/Certificate/Responsive Web Design.png',
     title: 'Responsive Web Design',
     url: 'https://www.freecodecamp.org/certification/adamarynto72/responsive-web-design',
   },
@@ -110,7 +110,7 @@ function HiroSection() {
                 <a href="mailto:adamariyanto06@gmail.com" className="btnContact">
                   Contact Me
                 </a>
-                <a href="/assetes/cv/Cv Adam 2025.pdf" download className="btnCv">
+                <a href="/src/assetes/cv/Cv Adam 2025.pdf" download className="btnCv">
                   Download CV
                 </a>
               </div>
@@ -129,7 +129,7 @@ function HiroSection() {
             </motion.div>
 
             <motion.div className="image-section" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.4 }} viewport={{ once: false }}>
-              <img src='/assetes/Foto/WhatsApp Image 2025-07-06 at 13.42.02_bed008a2.jpg' alt="Adam Aryanto" />
+              <img src='/src/assetes/Foto/WhatsApp Image 2025-07-06 at 13.42.02_bed008a2.jpg' alt="Adam Aryanto" />
             </motion.div>
           </motion.div>
         </section>
@@ -142,7 +142,7 @@ function HiroSection() {
           <div className="aboutBodyGlass">
             <div className="aboutBody">
               <motion.div className="aboutImage" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: false }}>
-                <img src='/assetes/Foto/WhatsApp Image 2025-07-06 at 13.42.02_bed008a2.jpg' alt="About" className="aboutImg" />
+                <img src='/src/assetes/Foto/WhatsApp Image 2025-07-06 at 13.42.02_bed008a2.jpg' alt="About" className="aboutImg" />
               </motion.div>
               <motion.div className="about-me" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} viewport={{ once: false }}>
                 Saya adalah seorang Front-End Developer yang memiliki minat besar dalam membangun antarmuka web yang interaktif, modern, dan responsif. Dengan dasar kuat dalam HTML, CSS, dan JavaScript, saya juga menguasai framework seperti React.js dan Tailwind CSS. Selain mengembangkan aplikasi web, saya juga aktif memperluas pengetahuan melalui sertifikasi dan proyek-proyek open source.
