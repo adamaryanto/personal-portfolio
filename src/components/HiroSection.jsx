@@ -130,7 +130,7 @@ function HiroSection() {
                     <a href="https://linkedin.com/in/adamaryanto" target="_blank" rel="noopener noreferrer" hrefLang='https://www.linkedin.com/in/adamaryanto/'>
                       <i className="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://instagram.com/adam.ig" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/adamarynto/" target="_blank" rel="noopener noreferrer">
                       <i className="fab fa-instagram"></i>
                     </a>
               </div>

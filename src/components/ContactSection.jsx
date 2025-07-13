@@ -1,29 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 
 function ContactSection() {
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-    const data = new FormData(form);
-
-    fetch('https://formsubmit.co/adamaryanto.my.id@gmail.com', {
-      method: 'POST',
-      body: data,
-    })
-      .then(() => {
-        navigate('/thanks'); // Redirect ke halaman thanks
-      })
-      .catch((err) => {
-        alert('Gagal mengirim. Coba lagi.');
-        console.error(err);
-      });
-  };
-
   return (
     <section id="contact" className="py-20 px-6 bg-[#0a192f] text-white">
       <motion.div
@@ -36,16 +14,21 @@ function ContactSection() {
         <h2 className="text-3xl font-bold text-center mb-10">Contact Me</h2>
 
         <form
-          onSubmit={handleSubmit}
+          action="https://formsubmit.co/adamaryanto.my.id@gmail.com"
+          method="POST"
           className="space-y-6 bg-[#112240] p-8 rounded-xl shadow-lg"
         >
-          {/* Hidden inputs for formsubmit */}
+          {/* Disable captcha and redirect to /thanks after submit */}
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://adamaryanto.my.id/thanks" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://adamaryanto.my.id/thanks"
+          />
 
-          {/* Name */}
+          {/* Name Input */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-2 text-white">
+            <label htmlFor="name" className="block text-sm font-medium mb-2">
               Name
             </label>
             <input
@@ -57,9 +40,9 @@ function ContactSection() {
             />
           </div>
 
-          {/* Email */}
+          {/* Email Input */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2 text-white">
+            <label htmlFor="email" className="block text-sm font-medium mb-2">
               Email
             </label>
             <input
@@ -71,9 +54,9 @@ function ContactSection() {
             />
           </div>
 
-          {/* Message */}
+          {/* Message Input */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium mb-2 text-white">
+            <label htmlFor="message" className="block text-sm font-medium mb-2">
               Message
             </label>
             <textarea
@@ -85,7 +68,7 @@ function ContactSection() {
             ></textarea>
           </div>
 
-          {/* Submit */}
+          {/* Submit Button */}
           <button
             type="submit"
             className="w-full py-3 bg-[#00b4d8] hover:bg-[#0096c7] text-white font-semibold rounded-md transition"
