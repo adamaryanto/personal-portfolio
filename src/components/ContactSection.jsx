@@ -15,7 +15,7 @@ function ContactSection() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <Lanyard/>
+        <Lanyard position={[0,0,23]} gravity={[0,-40,0]}/>
       </motion.div>
 
       {/* Kolom kanan dengan konten form */}

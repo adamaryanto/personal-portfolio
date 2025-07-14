@@ -21,7 +21,7 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 function Band({ maxSpeed = 50, minSpeed = 0 }) {
   const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef();
   const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3();
-  const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 4, linearDamping: 4 };
+  const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 8, linearDamping: 8 };
   const { nodes, materials } = useGLTF(cardGLB);
   const texture = useTexture(lanyard);
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]));
@@ -171,7 +171,7 @@ export default function Lanyard({ position = [0, 0, 30], gravity = [0, -40, 0], 
           onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
         >
           <ambientLight intensity={Math.PI} />
-          <Physics gravity={gravity} timeStep={1 / 60}>
+          <Physics interpolated gravity={gravity} timeStep={1 / 60}>
             <Band />
           </Physics>
           <Environment blur={0.75}>
