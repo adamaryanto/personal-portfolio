@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import GradientText from '../../Reactbits/GradientText/GradientText';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home'); // <- new
@@ -16,28 +16,46 @@ function Navbar() {
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'portfolio', 'contact'];
-      for (let id of sections) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(id);
-            break;
-          }
-        }
-      }
-    };
+useEffect(() => {
+  const sections = ['home', 'about', 'portfolio', 'contact'];
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Saat 50% elemen terlihat
+    }
+  );
+
+  sections.forEach(id => {
+    const section = document.getElementById(id);
+    if (section) observer.observe(section);
+  });
+
+  return () => {
+    sections.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) observer.unobserve(section);
+    });
+  };
+}, []);
+
 
   return (
     <nav className='navbar'>
-      <a href='/'><h1>Adam Aryanto</h1></a>
+        <GradientText
+          colors={["#ff0080", "#7928ca", "#2afadf", "#ff0080"]}
+          animationSpeed={5}
+          className="text-3xl md:text-4xl"
+          
+        >
+          Adam Aryanto
+        </GradientText>
 
       <div className={`burger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div></div>

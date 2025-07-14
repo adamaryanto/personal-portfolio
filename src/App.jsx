@@ -1,21 +1,21 @@
-import React from 'react'
-import { BrowserRouter, Route,Routes } from 'react-router-dom'
-import Dashboard from './Dashboard'
-import About from './About'
-import Portofolio from './Portofolio'
-import ThanksPage from './components/ThanksPage'
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Dashboard from './Dashboard';
+import About from './components/About';
+import Portofolio from './Portofolio';
+import ThanksPage from './components/ThanksPage';
 
 function App() {
   return (
-    <div>
-      <BrowserRouter >
+    <BrowserRouter>
       <Routes>
-        <Route path='/'element={<Dashboard/>}/>
-        <Route path='/thanks' element={<ThanksPage/>}/>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/portfolio" element={<Portofolio />} />
+        <Route path="/thanks" element={<ThanksPage />} />
       </Routes>
-      </BrowserRouter>
-    </div>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

@@ -32,20 +32,23 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
-  background-color: var(--color-background-dark);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 7px 30px;
+
+  /* Glassmorphism with matching background color */
+  background: rgba(7, 18, 34, 0.6); /* transparan, sama tone dengan --color-background-dark */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 12px 12px;
 }
+
 
 
 .navbar h1 {
   color: white;
-  font-size: 2rem;
+  font-size: 1.7rem;
   cursor: pointer;
-}
-
-.navbar a {
-  text-decoration: none;
 }
 
 .nav-item {
@@ -55,15 +58,46 @@ body {
 
 .nav-item a {
   color: var(--color-font-white);
-  margin: 20px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  padding: 10px 0;
+  margin: 0 15px;
   text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+  font-weight: 500;
 }
 
-.nav-item a:hover {
-  color: blue;
+/* Animated underline effect */
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: blue;
+  border-radius: 4px;
+  transition: width 0.3s ease;
 }
+
+/* Hover effect: animate underline + text color */
+.nav-item a:hover {
+  color: blue; /* warna teks berubah */
+}
+
+.nav-item a:hover::after {
+  width: 100%;
+}
+
+/* Active state: underline stays visible */
+.nav-item a.active {
+  color: blue; /* warna teks tetap biru saat aktif */
+}
+
+.nav-item a.active::after {
+  width: 100%;
+}
+
+
 
 /* ======================
    Hero Section
@@ -124,8 +158,8 @@ body {
 }
 
 .image-section img {
-  width: 550px;
-  height: 550px;
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -214,12 +248,33 @@ body {
   align-items: center;
 }
 
+/* Gantikan CSS untuk .aboutTitle dan .aboutTitle::after dengan ini */
+
+.aboutTitleContainer {
+  position: relative; /* Penting untuk posisi underline */
+  display: inline-block; /* Agar container pas dengan teks */
+  margin-bottom: 20px;
+}
+
 .aboutTitle {
   font-size: 36px;
-  margin-bottom: 20px;
-  text-align: center;
   color: #9f7aea;
+  font-weight: 500;
+  padding-bottom: 10px;
+  margin: 0; /* Hapus margin dari h1 jika ada */
 }
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  background-color: #9f7aea;
+  border-radius: 2px;
+}
+
+
 
 .aboutBodyGlass {
   background-color: rgba(255, 255, 255, 0.05);
@@ -489,11 +544,119 @@ body {
 .btn-detail:hover {
   background: #805ad5;
 }
+/* Contact */
+/* Container Contact */
+
+
+/* Container Utama Section */
+/* Container Utama Section */
+.contact-section {
+  display: flex;
+  min-height: 100vh;
+  background-color: #2d3748; /* Warna latar terang seperti contoh */
+  color: #9f7aea; /* Warna teks gelap */
+  overflow: hidden; /* Mencegah scroll horizontal dari animasi */
+}
+
+/* Kolom Kiri dan Kanan */
+.contact-left-pane,
+.contact-right-pane {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.contact-image {
+  max-width: 450px; /* Sesuaikan ukuran gambar */
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Wrapper untuk konten form di sisi kanan */
+.form-content-wrapper {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Container untuk judul dan underline */
+.contact-title-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: left;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+/* Garis bawah animasi */
+.contact-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: #9f7aea; /* Warna garis gelap */
+  border-radius: 2px;
+}
+
+/* Form dan Input Fields - Gaya Minimalis */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 0.25rem;
+  font-size: 1rem;
+  color: #333;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ccc; /* Garis bawah tipis default */
+  transition: border-color 0.3s ease;
+}
+
+.form-input::placeholder { /* Styling untuk placeholder */
+  color: #aaa;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom-color: #333; /* Garis bawah menjadi gelap saat focus */
+}
+
+/* Tombol Submit */
+.form-button {
+  width: auto; /* Lebar tombol tidak penuh */
+  align-self: flex-start; /* Posisi tombol di awal (kiri) */
+  padding: 0.6rem 2rem;
+  color: white;
+  background: #9f7aea;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #555;
+}
+
 
 /* ======================
    Responsive (Mobile)
 ====================== */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .nav-item {
     display: none;
     flex-direction: column;
@@ -556,24 +719,45 @@ body {
   }
 
   /* ✅ Tombol tab portfolio di mobile */
-  .portfolio-tabs {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    padding: 10px;
-  }
+ .portfolio-tabs {
+  display: flex;
+  flex-wrap: wrap; /* Izinkan tombol turun ke baris baru jika tidak muat */
+  justify-content: center; /* Pusatkan tombol-tombol */
+  gap: 8px; /* Jarak antar tombol */
+  padding: 10px;
+}
 
-  .portfolio-tabs button {
-    width: 100%;
-    max-width: 220px;
-    padding: 14px 20px;
-    border-radius: 10px;
-    font-size: 14px;
-  }
+.portfolio-tabs button {
+  flex-grow: 1; /* Biarkan tombol mengisi ruang yang tersedia */
+  flex-basis: 120px; /* Lebar dasar minimal sebelum membesar */
+  
+  padding: 10px 12px;
+  font-size: 14px; /* Ukuran font yang mudah dibaca */
+  font-weight: 500;
+  text-align: center;
+  
+  color: #cbd5e1; /* Warna teks default yang lebih soft */
+  background-color: #2d3748; /* Beri latar belakang agar terlihat seperti tombol */
+  border: 1px solid transparent; /* Border transparan untuk menjaga layout */
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  .tab-icon {
-    font-size: 16px;
-  }
+/* Status tombol yang sedang aktif */
+.portfolio-tabs button.active {
+  color: white;
+  background-color: #9f7aea; /* Warna aksen untuk status aktif */
+  border-color: #9f7aea;
+  font-weight: 600;
+}
+
+/* Sembunyikan ikon di mobile agar lebih simpel */
+.tab-icon {
+  display: none;
+}
+
   /* ✅ Social icons agar di tengah saat mobile */
 .social-icons {
   justify-content: center;
@@ -591,4 +775,16 @@ body {
     max-width: 250px;
   }
 
+   .contact-section {
+    flex-direction: column;
+  }
+
+  .contact-left-pane {
+    display: none;
+  }
+
+  .contact-right-pane {
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+  }
 }

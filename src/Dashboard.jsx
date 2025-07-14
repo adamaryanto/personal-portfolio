@@ -1,14 +1,20 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import HiroSection from './components/HiroSection'
+import React from 'react';
+import HiroSection from './components/HiroSection';
+import About from './components/About';
+import ContactSection from './components/ContactSection';
 
 function Dashboard() {
   return (
-    <div>
-        <Navbar/>
-        <HiroSection/>
-    </div>
-  )
+    <>
+      {/* Hero Section (berisi profil, CV, social media, gambar) */}
+      <HiroSection />
+
+      {/* Jika HiroSection belum menyatukan semuanya, bisa pakai ini: */}
+      {/* <About /> */}
+      {/* <PortfolioSection /> */}
+      {/* <ContactSection /> */}
+    </>
+  );
 }
 
-export default Dashboard
+export default Dashboard;
