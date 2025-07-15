@@ -1,10 +1,20 @@
 import React from 'react';
-import { AnimatePresence, motion } from 'framer-motion'; // ✅ WAJIB ADA
+import { AnimatePresence, motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import CertificateCard from './CertificateCard';
 import TechCard from './TechCard';
 
 const PortfolioContent = ({ currentItems, activeTab }) => {
+  // 1. Buat object untuk memetakan nama tab ke komponennya
+  const cardMap = {
+    projects: ProjectCard, // Ganti 'projects' jika nama tab default Anda berbeda
+    certificates: CertificateCard,
+    techstack: TechCard,
+  };
+
+  // Pilih komponen yang sesuai, jika tidak ada, gunakan ProjectCard sebagai default
+  const CardComponent = cardMap[activeTab] || ProjectCard;
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -19,12 +29,11 @@ const PortfolioContent = ({ currentItems, activeTab }) => {
           <motion.p style={{ color: 'gray', marginTop: '40px' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             Data belum tersedia.
           </motion.p>
-        ) : activeTab === 'certificates' ? (
-          currentItems.map((item, idx) => <CertificateCard key={idx} item={item} idx={idx} />)
-        ) : activeTab === 'techstack' ? (
-          currentItems.map((item, idx) => <TechCard key={idx} item={item} idx={idx} />)
         ) : (
-          currentItems.map((item, idx) => <ProjectCard key={idx} item={item} idx={idx} />)
+          // 2. Gunakan CardComponent dan key yang lebih baik
+          currentItems.map((item, idx) => (
+            <CardComponent key={item.id || idx} item={item} idx={idx} />
+          ))
         )}
       </motion.div>
     </AnimatePresence>

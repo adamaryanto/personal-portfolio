@@ -387,9 +387,7 @@ body {
 .portfolio-card,
 .certificate-card {
   background: rgba(255, 255, 255, 0.08);
-   backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  background-color: rgba(45, 55, 72, 0.6); 
+  backdrop-filter: blur(12px);
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
@@ -400,9 +398,7 @@ body {
 /* Untuk project/certificates */
 .tech-card {
   background: rgba(255, 255, 255, 0.05);
-   backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  background-color: rgba(45, 55, 72, 0.6); 
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 20px;
@@ -716,7 +712,18 @@ body {
   .aboutBodyGlass {
     padding: 20px;
   }
+  /* Di dalam @media screen and (max-width: 768px) */
 
+.portfolio-card,
+.certificate-card,
+.tech-card {
+  /* Nonaktifkan efek glass di mobile untuk performa */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  /* Beri background solid transparan sebagai gantinya agar tetap terlihat bagus */
+  background-color: rgba(45, 55, 72, 0.6); /* Contoh: warna slate gelap transparan */
+}
   /* ✅ Card portfolio biar responsive */
   .portfolio-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
