@@ -1,15 +1,16 @@
-// 1. Import useNavigate dari react-router-dom
+// 1. Import useNavigate dan ikon
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { FaRegEnvelope } from "react-icons/fa"; // <-- Impor ikon surat
 import Lanyard from '../../Lanyard/Lanyard/Lanyard';
 
 function ContactSection() {
-  // 2. Inisialisasi hook useNavigate
   const navigate = useNavigate();
   const [status, setStatus] = useState('');
 
   const handleSubmit = async (e) => {
+    // ... (fungsi handleSubmit tetap sama)
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
@@ -24,7 +25,6 @@ function ContactSection() {
       });
 
       if (response.ok) {
-        // 3. Jika berhasil, panggil navigate ke halaman /thanks
         navigate('/thanks');
       } else {
         setStatus("Oops! Terjadi kesalahan saat mengirim pesan.");
@@ -36,7 +36,7 @@ function ContactSection() {
 
   return (
     <section id="contact" className="contact-section">
-      {/* Kolom kiri dengan gambar */}
+      {/* ... (Kolom kiri tetap sama) ... */}
       <motion.div 
         className="contact-left-pane"
         initial={{ opacity: 0, x: -100 }}
@@ -47,7 +47,6 @@ function ContactSection() {
         <Lanyard position={[0,0,23]} gravity={[0,-40,0]}/>
       </motion.div>
 
-      {/* Kolom kanan dengan konten form */}
       <motion.div
         className="contact-right-pane"
         initial={{ opacity: 0, x: 100 }}
@@ -56,9 +55,12 @@ function ContactSection() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <div className="form-content-wrapper">
-          {/* Container untuk judul dan underline */}
           <div className="contact-title-container">
-            <h2 className="contact-title">Contact</h2>
+            {/* 2. Ubah h2 untuk menyertakan ikon dan teks baru */}
+            <h2 className="contact-title">
+              <FaRegEnvelope /> 
+              <span>Get In Touch</span>
+            </h2>
             <motion.div
               className="contact-underline"
               initial={{ width: 0 }}
@@ -70,11 +72,8 @@ function ContactSection() {
 
           <form
             onSubmit={handleSubmit}
-            action="https://formsubmit.co/adamaryanto.my.id@gmail.com"
-            method="POST"
-            className="contact-form"
+            // ... (sisa form tetap sama) ...
           >
-            {/* ... input fields tetap sama ... */}
             <input type="text" name="name" placeholder="Your name" required className="form-input" />
             <input type="email" name="email" placeholder="Your email" required className="form-input" />
             <input type="text" name="subject" placeholder="Subject" required className="form-input" />

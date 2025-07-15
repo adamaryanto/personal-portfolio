@@ -256,12 +256,18 @@ body {
   margin-bottom: 20px;
 }
 
-.aboutTitle {
-  font-size: 36px;
-  color: #9f7aea;
-  font-weight: 500;
+/* Di file CSS Anda */
+.contact-title {
+  /* ...properti yang sudah ada... */
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
   padding-bottom: 10px;
-  margin: 0; /* Hapus margin dari h1 jika ada */
+
+  /* Tambahkan ini untuk mensejajarkan ikon dan teks */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Jarak antara ikon dan teks */
 }
 
 .underline {
