@@ -36,23 +36,35 @@ function ContactSection() {
 
   return (
     <section id="contact" className="contact-section">
+      {/* Kolom kiri dengan gambar */}
       <motion.div 
         className="contact-left-pane"
-        // ... (props motion tetap sama)
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <Lanyard position={[0,0,23]} gravity={[0,-40,0]}/>
       </motion.div>
 
+      {/* Kolom kanan dengan konten form */}
       <motion.div
         className="contact-right-pane"
-        // ... (props motion tetap sama)
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div className="form-content-wrapper">
+          {/* Container untuk judul dan underline */}
           <div className="contact-title-container">
             <h2 className="contact-title">Contact</h2>
             <motion.div
               className="contact-underline"
-              // ... (props motion tetap sama)
+              initial={{ width: 0 }}
+              whileInView={{ width: '100%' }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              viewport={{ once: false, amount: 0.8 }}
             />
           </div>
 
