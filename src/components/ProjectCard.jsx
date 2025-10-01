@@ -13,7 +13,7 @@ const ProjectCard = ({ item, idx }) => (
       {item.description && <p>{item.description}</p>}
       <div className="portfolio-btn-group">
         {item.demoLink && <a href={item.demoLink} className="btn-demo" target="_blank">Live Demo</a>}
-        {/* {item.detailLink && <a href={item.detailLink} className="btn-detail">Details</a>} */}
+        {item.linkGithub && <a href={item.linkGithub} className="btn-detail">Github</a>}
       </div>
     </div>
   </motion.div>

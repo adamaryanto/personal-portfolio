@@ -14,6 +14,7 @@ export const portfolioData = {
       description: 'Landing Page modern untuk restoran burger.',
       image: porto1,
       demoLink: 'https://adamaryanto.github.io/restaurant-landing-page/',
+      linkGithub: 'https://github.com/adamaryanto/restaurant-landing-page',
       detailLink: '#',
     },
     {
@@ -21,14 +22,14 @@ export const portfolioData = {
       description: 'Game interaktif berbasis React dengan statistik pemain.',
       image: porto3,
       demoLink: 'https://adamaryanto.github.io/gunting-batu-kertas-react-app/',
-      detailLink: 'https://github.com/adamaryanto/gunting-batu-kertas-react-app',
+      linkGithub: 'https://github.com/adamaryanto/gunting-batu-kertas-react-app',
     },
     {
       title: 'Cek Khodam',
       description: 'Aplikasi hiburan untuk mengecek khodam dengan nama.',
       image: porto2,
       demoLink: 'https://adamaryanto.github.io/cek-khodam-online/',
-      detailLink: 'https://github.com/adamaryanto/cek-khodam-online',
+      linkGithub: 'https://github.com/adamaryanto/cek-khodam-online',
     },
   ],
   certificates: [
